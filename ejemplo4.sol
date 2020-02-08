@@ -27,10 +27,9 @@ contract recompensas {
         return (AutoresTareas[msg.sender].recompensa, AutoresTareas[msg.sender].estatusActual, AutoresTareas[msg.sender].existe);
     }
     
-    function updateAutor(address _autor) public{
-        agregarTarea(10, "");
-        Tarea memory nuevaTarea;
-        nuevaTarea.estatusActual = EstatusTarea.Cerrada;
+    function updateAutor(address _autor) public returns (bool){
+        AutoresTareas[_autor].estatusActual = EstatusTarea.Cerrada;
+        return true;
     }
     
     
